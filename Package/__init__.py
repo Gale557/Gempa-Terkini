@@ -1,10 +1,14 @@
 from bs4 import BeautifulSoup
 import requests
-def function():
+def Data_extraction():
     content = requests.get("https://www.bmkg.go.id/")
 
     if content.status_code == 200:
         soup = BeautifulSoup(content.text, "html.parser")
-        find = soup.find("title")
-        title = find.string
-        print(title)
+        title = soup.find('title')
+        result = soup.find('div', {"class": "col-md-6 col-xs-6 gempabumi-detail no-padding"})
+        result = result.findChildren("li")
+        print(title.text)
+        for res in result:
+            print(res.text)
+

@@ -1,3 +1,3 @@
-from Package import function
+from Package import Data_extraction
 
-function()
+Data_extraction()
