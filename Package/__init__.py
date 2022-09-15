@@ -1,6 +1,7 @@
 from bs4 import BeautifulSoup
 import requests
 def data_extraction():
+    global scale, center, bt, lu, depth, magnitudo
     content = requests.get("https://www.bmkg.go.id/")
 
     if content.status_code == 200:
@@ -24,7 +25,7 @@ def data_extraction():
             elif i == 5:
                 scale = result.text
             i +=1
-
+    print("LIVE GEMPA")
     print(f"Magnitude : {magnitudo} Magnitude")
     print(f"Depth : {depth}")
     print(f"LU : {lu}")
