@@ -25,7 +25,6 @@ def data_extraction():
             elif i == 5:
                 scale = result.text
             i +=1
-    print("LIVE GEMPA")
     print(f"Magnitude : {magnitudo} Magnitude")
     print(f"Depth : {depth}")
     print(f"LU : {lu}")
